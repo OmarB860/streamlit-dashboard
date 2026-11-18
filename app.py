@@ -149,7 +149,7 @@ else:
             last_8 = selected_data[selected_data["Country"] == country].tail(8)
             # last day total minus the total from 7 days before, then divide by 7
             new_total = last_8[column].iloc[-1] - last_8[column].iloc[0]
-            averages.append(new_total / 7)
+            averages.append(round(new_total / 7))
 
         avg_data = pd.DataFrame({"Country": countries, "7 Day Average": averages})
 
